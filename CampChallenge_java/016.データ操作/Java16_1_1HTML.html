@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action = "./Java16_1_3JSP.jsp" method = "post">
+       <!--　<p></p>はHTMLでの<br>表現です。　-->
+       <p><font color = "blue">【名前】</font><input type = "text" name = "txtname"></p>     
+<!--　" type "は『タブ・テキスト・ラジオ』等タブという固定？の型みたいのがある。
+      " name "はJSP側での呼び出しとしてリンクさせるモノになります。
+      " value "は今回の場合ラジオボックスで選んだ場合の表記を行う際にJSP側で表示される内容になります。
+      今回の場合、【女】と【男】を設定していますが、これを【猫とチョコ】に変更した場合、HTML側での表示は【女】或いは【男】であっても
+    　JSP側で表示される内容は【猫とチョコ】となって表示される事となります。　-->
+            <p>性別
+            【 男:<input type = "radio" name= "human" value="男" checked>
+             <font color = "red">女</font>:
+             <input type = "radio" name= "human" value="女">】
+            </p>
+            
+            <p><font color = "green">【趣味】</font>
+            </p><textarea name = "wordarea" cols ="20" rows ="5"></textarea>
+            
+             <p><font color = "red">【パスワード】</font></p>
+                <input type = "password" name = "pass">
+             
+             <p><input type = "submit" name = "btnSubmit" value = "送信">
+                <input type = "reset" name = "re" value = "取消">
+             </p>
+                <input type = "hidden" name ="clear" value = "隠しフィールド">
+             <p>
+                 <font color = "purple">検索フォーム</font><input type="search" name = "kensaku">
+             </p>
+        </form>
+    </body>
+</html>
