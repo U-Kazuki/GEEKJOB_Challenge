@@ -1,0 +1,100 @@
+Setting environment for using XAMPP for Windows.
+Guestnumber@DESKTOP-VKAFOB2 c:\xampp
+# mysql -u GEEKJOB -p
+Enter password: ********
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 24
+Server version: 10.1.25-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE Challenge_db;
+Database changed
+MariaDB [Challenge_db]> INSERT INTO profiles(profilesID,name,tel,age,birthday)VALUES(1,'ìcíÜÅ@é¿','ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX',30,'1994-02-01');
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [Challenge_db]> INSERT INTO profiles(profilesID,name,tel,age,birthday)VALUES(2,'óÈñÿÅ@ñŒ','ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS',37,'1987-08-12');
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [Challenge_db]> INSERT INTO profiles(profilesID,name,tel,age,birthday)VALUES(3,'óÈñÿÅ@é¿','ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS',24,'2000-12-24');
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [Challenge_db]> DELETE FROM profiles WHERE profilesID = 3;
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [Challenge_db]> INSERT INTO profiles(profilesID,name,tel,age,birthday)VALUES(3,'óÈñÿÅ@é¿','ÇOÇWÇOÅ|ÇTÇTÇUÇUÅ|ÇVÇVÇWÇW',24,'2000-12-24');
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [Challenge_db]> INSERT INTO profiles(profilesID,name,tel,age,birthday)VALUES(4,'ç≤ì°Å@ê¥','ÇOÇPÇQÅ|ÇOÇXÇWÇVÅ|ÇUÇTÇSÇR',19,'2005-08-01');
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [Challenge_db]> INSERT INTO profiles(profilesID,name,tel,age,birthday)VALUES(5,'çÇã¥Å@ê¥','ÇOÇXÇOÅ|ÇXÇXÇOÇOÅ|ÇPÇQÇRÇS',24,'2000-12-24');
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [Challenge_db]> SELECT profilesID,name,tel,age,birthday FROM profiles;
++------------+----------+----------------------------+------+------------+
+| profilesID | name     | tel                        | age  | birthday   |
++------------+----------+----------------------------+------+------------+
+|          1 | ìcíÜÅ@é¿ | ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX   |   30 | 0000-00-00 |
+|          2 | óÈñÿÅ@ñŒ | ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS | 3377 | 1987-08-12 |
+|          1 | ìcíÜÅ@é¿ | ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX   |   30 | 1994-02-01 |
+|          1 | ìcíÜÅ@é¿ | ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX   |   30 | 1994-02-01 |
+|          2 | óÈñÿÅ@ñŒ | ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS |   37 | 1987-08-12 |
+|          3 | óÈñÿÅ@é¿ | ÇOÇWÇOÅ|ÇTÇTÇUÇUÅ|ÇVÇVÇWÇW |   24 | 2000-12-24 |
+|          4 | ç≤ì°Å@ê¥ | ÇOÇPÇQÅ|ÇOÇXÇWÇVÅ|ÇUÇTÇSÇR |   19 | 2005-08-01 |
+|          5 | çÇã¥Å@ê¥ | ÇOÇXÇOÅ|ÇXÇXÇOÇOÅ|ÇPÇQÇRÇS |   24 | 2000-12-24 |
++------------+----------+----------------------------+------+------------+
+8 rows in set (0.00 sec)
+
+MariaDB [Challenge_db]> DELETE FROM profiles WHERE profilesID = 1;
+Query OK, 3 rows affected (0.00 sec)
+
+MariaDB [Challenge_db]> SELECT profilesID,name,tel,age,birthday FROM profiles;
++------------+----------+----------------------------+------+------------+
+| profilesID | name     | tel                        | age  | birthday   |
++------------+----------+----------------------------+------+------------+
+|          2 | óÈñÿÅ@ñŒ | ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS | 3377 | 1987-08-12 |
+|          2 | óÈñÿÅ@ñŒ | ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS |   37 | 1987-08-12 |
+|          3 | óÈñÿÅ@é¿ | ÇOÇWÇOÅ|ÇTÇTÇUÇUÅ|ÇVÇVÇWÇW |   24 | 2000-12-24 |
+|          4 | ç≤ì°Å@ê¥ | ÇOÇPÇQÅ|ÇOÇXÇWÇVÅ|ÇUÇTÇSÇR |   19 | 2005-08-01 |
+|          5 | çÇã¥Å@ê¥ | ÇOÇXÇOÅ|ÇXÇXÇOÇOÅ|ÇPÇQÇRÇS |   24 | 2000-12-24 |
++------------+----------+----------------------------+------+------------+
+5 rows in set (0.00 sec)
+
+MariaDB [Challenge_db]> UPDATE profiles SET profilesID = 1 name = 'ìcíÜÅ@é¿' tel = 'ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX' age = 30 birthday = '1987-08-12' WHERE age = 3377;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'name = 'ìc íÜÅ@é¿' tel = 'ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX' age = 30 birt' at line 1
+MariaDB [Challenge_db]> UPDATE profiles SET profilesID = 1 WHERE age = 3377;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Challenge_db]> UPDATE profiles SET name 'ìcíÜÅ@é¿' WHERE age = 3377;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''ìcíÜÅ@é¿' WHERE age = 3377' at line 1
+MariaDB [Challenge_db]> UPDATE profiles SET name = 'ìcíÜÅ@é¿' WHERE age = 3377;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Challenge_db]> UPDATE profiles SET tel = 'ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX' WHERE age = 3377;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Challenge_db]> UPDATE profiles SET birthday = '1994-02-01' WHERE age = 3377;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Challenge_db]> UPDATE profiles SET age = 30 WHERE profilesID = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Challenge_db]> SELECT profilesID,name,tel,age,birthday FROM profiles;
++------------+----------+----------------------------+------+------------+
+| profilesID | name     | tel                        | age  | birthday   |
++------------+----------+----------------------------+------+------------+
+|          1 | ìcíÜÅ@é¿ | ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX   |   30 | 1994-02-01 |
+|          2 | óÈñÿÅ@ñŒ | ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS |   37 | 1987-08-12 |
+|          3 | óÈñÿÅ@é¿ | ÇOÇWÇOÅ|ÇTÇTÇUÇUÅ|ÇVÇVÇWÇW |   24 | 2000-12-24 |
+|          4 | ç≤ì°Å@ê¥ | ÇOÇPÇQÅ|ÇOÇXÇWÇVÅ|ÇUÇTÇSÇR |   19 | 2005-08-01 |
+|          5 | çÇã¥Å@ê¥ | ÇOÇXÇOÅ|ÇXÇXÇOÇOÅ|ÇPÇQÇRÇS |   24 | 2000-12-24 |
++------------+----------+----------------------------+------+------------+
+5 rows in set (0.00 sec)
