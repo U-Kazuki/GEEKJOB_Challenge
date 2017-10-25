@@ -1,0 +1,26 @@
+MariaDB [Challenge_db]> SELECT*FROM profiles;
++------------+----------+----------------------------+------+------------+
+| profilesID | name     | tel                        | age  | birthday   |
++------------+----------+----------------------------+------+------------+
+|          1 | ìcíÜÅ@é¿ | ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX   |   30 | 1994-02-01 |
+|          2 | óÈñÿÅ@ñŒ | ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS |   37 | 1987-08-12 |
+|          3 | óÈñÿÅ@é¿ | ÇOÇWÇOÅ|ÇTÇTÇUÇUÅ|ÇVÇVÇWÇW |   24 | 2000-12-24 |
+|          4 | ç≤ì°Å@ê¥ | ÇOÇPÇQÅ|ÇOÇXÇWÇVÅ|ÇUÇTÇSÇR |   19 | 2005-08-01 |
+|          5 | çÇã¥Å@ê¥ | ÇOÇXÇOÅ|ÇXÇXÇOÇOÅ|ÇPÇQÇRÇS |   24 | 2000-12-24 |
++------------+----------+----------------------------+------+------------+
+5 rows in set (0.00 sec)
+
+MariaDB [Challenge_db]> DELEATE FROM profiles WHERE birthday = '2000-12-24';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DELEATE FROM profiles WHERE birthday = '2000-12-24'' at line 1
+MariaDB [Challenge_db]> DELETE FROM profiles WHERE birthday = '2000-12-24';
+Query OK, 2 rows affected (0.01 sec)
+
+MariaDB [Challenge_db]> SELECT*FROM profiles;
++------------+----------+----------------------------+------+------------+
+| profilesID | name     | tel                        | age  | birthday   |
++------------+----------+----------------------------+------+------------+
+|          1 | ìcíÜÅ@é¿ | ÇOÇPÇQÅ|ÇRÇSÇTÅ|ÇUÇVÇWÇX   |   30 | 1994-02-01 |
+|          2 | óÈñÿÅ@ñŒ | ÇOÇXÇOÅ|ÇPÇPÇQÇQÅ|ÇRÇRÇSÇS |   37 | 1987-08-12 |
+|          4 | ç≤ì°Å@ê¥ | ÇOÇPÇQÅ|ÇOÇXÇWÇVÅ|ÇUÇTÇSÇR |   19 | 2005-08-01 |
++------------+----------+----------------------------+------+------------+
+3 rows in set (0.00 sec)
